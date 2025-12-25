@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>Навигатор по ВУЗу</title>
+  <title>Навигатор КубГУ</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <meta name="theme-color" content="#4a6fa5">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📍</text></svg>">
+  <link rel="icon" href="icon.jpg">
   <link rel="stylesheet" href="styles/main.css">
+  <link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#4a6fa5">
 </head>
 <body>
   <div class="app-container" id="appContainer">
-    <!-- 🔷 КАРТА — ТОЛЬКО SVG + ТОЧКИ -->
     <div class="map-container" id="mapContainer">
       <div class="map-surface" id="mapSurface"></div>
     </div>
 
-    <!-- 📍 Индикатор перемещения -->
     <div class="move-indicator" id="moveIndicator">Перемещайте карту пальцем</div>
 
-    <!-- 🏢 Селектор корпусов -->
     <div class="building-selector">
       <div class="building-btn" id="buildingBtn">
         <span id="currentBuilding">Корпус А</span>
@@ -31,7 +30,6 @@
       </div>
     </div>
 
-    <!-- 🔍 Поиск -->
     <div class="search-container">
       <div class="search-box" id="searchTrigger">
         <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle r="9" cx="11" cy="11"/><path d="M21 21L16.65 16.65"/></svg>
@@ -39,7 +37,6 @@
       </div>
     </div>
 
-    <!-- 🚀 Быстрое построение маршрута -->
     <div class="route-btn" id="quickRouteBtn">
       <svg class="route-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
@@ -47,13 +44,11 @@
       </svg>
     </div>
 
-    <!-- 🔍+ 🔍- -->
     <div class="zoom-controls">
       <button class="zoom-btn" id="zoomIn">+</button>
       <button class="zoom-btn" id="zoomOut">-</button>
     </div>
 
-    <!-- 📅 Этажи -->
     <div class="floor-controls">
       <div class="floor-btn" data-floor="5">5</div>
       <div class="floor-btn" data-floor="4">4</div>
@@ -62,7 +57,6 @@
       <div class="floor-btn active" data-floor="1">1</div>
     </div>
 
-    <!-- 📍 Информация о точке -->
     <div class="point-info" id="pointInfo">
       <div class="point-header">
         <div class="point-title" id="pointTitle">Кабинет 101</div>
@@ -81,7 +75,6 @@
     </div>
   </div>
 
-  <!-- 🔍 Полноэкранный поиск -->
   <div class="search-overlay" id="searchOverlay">
     <div class="search-header">
       <div class="search-input-container">
@@ -94,5 +87,10 @@
   </div>
 
   <script type="module" src="scripts/app.js"></script>
+  <script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js');
+}
+</script>
 </body>
 </html>
