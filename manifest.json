@@ -1,6 +1,5 @@
 {
   "name": "Навигатор КубГУ",
-  "short_name": "Навигатор",
   "start_url": "/kubsu_navigator/index.html",
   "display": "standalone",
   "background_color": "#4a6fa5",
@@ -12,4 +11,5 @@
       "type": "image/jpg"
     }
   ]
+
 }
