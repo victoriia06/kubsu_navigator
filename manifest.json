@@ -1,8 +1,10 @@
 {
   "name": "Навигатор КубГУ",
   "short_name": "Навигатор",
-  "scope": "/kubsu_navigator/",
-  "start_url": "/kubsu_navigator/",
+  "start_url": "/kubsu_navigator/index.html",
+  "display": "standalone",
+  "background_color": "#4a6fa5",
+  "theme_color": "#4a6fa5",
   "icons": [
     {
       "src": "/kubsu_navigator/icon.jpg",
